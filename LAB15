@@ -1,0 +1,47 @@
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+FILE*f;
+int n,a[50];int u; int k;
+int *e,i;int *o;
+
+f=fopen("number.txt","w");
+e=fopen("even.txt","w");
+o=fopen("odd,txt","w");
+printf("Enter the no. of elements :- ");
+scanf("%d",&u);
+printf("Enter the no.:-\n ");
+for(i=0;i<u;++i)
+{
+scanf("%d",&a[i]);
+putw (a[i],f);
+}
+fclose(f);
+f=fopen("number.txt","r");
+while((n=getw(f))!=EOF)
+{
+if(n%2==0)
+putw(n,e);
+else
+putw(n,o);
+}
+fclose(f);
+fclose(e);
+fclose(o);
+printf("Data in even text :-\n");
+e=fopen("even.txt","r");
+while((n=getw(e))!=EOF)
+printf("%d\n",n);
+fclose(e);
+printf("Data in odd text :-\n");
+o=fopen("odd,txt","r");
+while((k=getw(o))!=EOF)
+printf("%d\n",k);
+fclose(o);
+getch();
+}
+
+
+
+
